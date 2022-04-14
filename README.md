@@ -349,8 +349,7 @@ for i in iterations:
             Y_test, model.fit(X_train_df[tree_features[:i]].values, Y_train).predict(X_test_df[tree_features[:i]].values), zero_division=0
         ) for model in models
     ])
-```
-```python
+
 # Определение основных объектов диаграмм
 fig, axes = plt.subplots(1, 4, figsize=(24,5))
 
