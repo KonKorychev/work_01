@@ -448,6 +448,7 @@ for name, model in zip(model_names, models):
     print('{:<19}:  precision = {:.2f}  recall = {:.2f}'.format(
         name, precision_score(Y_test, model_pred[len(model_pred)-1], zero_division=0), recall_score(Y_test, model_pred[len(model_pred)-1])))
 ```
+```
 Оценка моделей на экспертных признаках
 GaussianNB         :  precision = 0.04  recall = 0.00
 LogisticRegression :  precision = 0.00  recall = 0.00
