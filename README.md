@@ -56,7 +56,7 @@ data_classification = pd.read_csv('data_classification_train.csv')
 # Вывод загруженных данных
 data_classification.head()
 ```
-![png](Images/output_20_0.png)
+![jpg](Images/table01.jpg)
 
 ```python
 ```
