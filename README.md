@@ -64,7 +64,7 @@ data_classification.head()
 data_classification.drop(columns=['transaction_id'], inplace=True)
 ```
 
-## Разведочный анализ данных
+## Разведочный анализ
 ```python
 # Сводная информация о структуре исходных данных
 data_classification.info()
@@ -273,7 +273,7 @@ for column in corr_matrix.columns[1:]:
 transform_data = dummies_features.drop(columns=corr_matrix[corr_matrix.sum(axis=0)==0].index)
 ```
 
-## Предварительная обработка данных
+## Предобработка данных
 ```python
 # Нормализация значений признаков
 X_data = MinMaxScaler().fit_transform(transform_data.iloc[:, 1:])
@@ -312,7 +312,7 @@ tree_features = pd.Series(
     index=transform_data.columns[1:]
 ).sort_values().index
 ```
-## Построение моделей
+## Построение модели
 Поскольку классы несбалансированные (доля «подозрительных» транзакций составляет 0.078), модели не обладая никакой предсказательной силой будут выдавать правильные ответы с долей 0.92. Преодолеть это поможет переход с общей для всех классов метрики к отдельным показателям качества классов. Наши модели бинарной классификации будем оценивать по метрике **Precision**. Метрика **Accuracy** в нашем случае будет бесполезна.
 
 ```python
